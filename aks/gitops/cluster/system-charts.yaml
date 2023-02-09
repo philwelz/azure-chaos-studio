@@ -26,4 +26,8 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v1beta1
       kind: HelmRelease
       name: chaos-mesh
-      namespace: chaos-mesh
+      namespace: chaos-testing
+    - apiVersion: helm.toolkit.fluxcd.io/v1beta1
+      kind: HelmRelease
+      name: weave-gitops
+      namespace: flux-system
