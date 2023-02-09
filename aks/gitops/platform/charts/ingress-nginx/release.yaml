@@ -12,6 +12,7 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: flux-system
+      interval: 12h
   upgrade:
     remediation:
       remediateLastFailure: true

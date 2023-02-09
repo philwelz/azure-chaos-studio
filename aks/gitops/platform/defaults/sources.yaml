@@ -14,7 +14,7 @@ metadata:
   name: ingress-nginx
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 60m0s
   url: https://kubernetes.github.io/ingress-nginx
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
@@ -23,5 +23,16 @@ metadata:
   name: chaos-mesh
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 60m0s
   url: https://charts.chaos-mesh.org
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: weave-gitops
+  namespace: flux-system
+spec:
+  type: oci
+  interval: 60m0s
+  url: oci://ghcr.io/weaveworks/charts

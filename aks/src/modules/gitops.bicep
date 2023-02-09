@@ -2,6 +2,7 @@
 param stage string
 param gitRepository string
 param gitBranch string
+param fluxKustomizationPath string
 param aksName string
 
 // Get existing AKS
@@ -65,7 +66,7 @@ resource fluxConfig 'Microsoft.KubernetesConfiguration/fluxConfigurations@2022-0
     }
     kustomizations: {
       cluster: {
-        path: './clusters/${stage}'
+        path: fluxKustomizationPath
         dependsOn: []
         timeoutInSeconds: 600
         syncIntervalInSeconds: 600

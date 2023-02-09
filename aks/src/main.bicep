@@ -26,10 +26,8 @@ param tags object = {
 // ############# RG ###############
 // ################################
 
-var rgName = 'rg-${baseName}'
-
 module rgCore './modules/rg.bicep' = {
-  name: rgName
+  name: 'rg-aks-${baseName}'
   params: {
     rgName: rgName
     location: location
@@ -94,8 +92,9 @@ module aksGitOps './modules/gitops.bicep' = {
   params: {
     stage: stage
     aksName: aksCluster.outputs.aksName
-    gitRepository: 'https://github.com/philwelz/aks-chaos'
+    gitRepository: 'https://github.com/philwelz/azure-chaos-studio'
     gitBranch: 'main'
+    fluxKustomizationPath: './aks/gitops/cluster/'
   }
 }
 
