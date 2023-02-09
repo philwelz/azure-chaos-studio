@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-config
-  path: ./gitops/platform/charts
+  path: ./aks/gitops/platform/charts
   prune: true
   validation: server
   healthChecks:

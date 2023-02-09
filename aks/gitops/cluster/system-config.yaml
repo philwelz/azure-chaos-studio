@@ -11,6 +11,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-config
-  path: ./gitops/platform/config
+  path: ./aks/gitops/platform/config
   prune: true
   validation: server
